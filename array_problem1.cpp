@@ -1,4 +1,7 @@
-// largest element in an array
+// largest element in an array//
+
+
+
 
 // #include <iostream>
 // using namespace std;
@@ -35,4 +38,4 @@ vector <int> arr = {1,2,3,6,7,3,8};
 cout << largestelement(arr) ;
     return  0;
 }
-//use .size(arr) for vector not sizeof (arr)
+//NOTE:  use .size(arr) for vector not sizeof (arr)
