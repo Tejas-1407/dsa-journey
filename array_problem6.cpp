@@ -20,14 +20,39 @@ void LeftRotateB_DPlaces(vector <int> & v , int D){
     for (int i = 0 ; i< D ;i++){
         temp [i] = v[i];
     }
+    //O(d)
     for (int i = D ;i< v.size ();i++){
         v [i - D] = v[i];
     }
+    //O(n-d)
     for (int i = v.size()-D ; i < v.size();i++ ){
         v[i] = temp[i - (v.size()-D)] ; 
     }
+    //O(d)
+    //SC = O(D) bcz of temporary array used 
 }
-
+ void LeftRotate_Array_By_D_Places_Optimal(vector <int> &v , int D ){
+    if (v.size() == 0 ){
+         return ;
+    } 
+    D = D % v.size();
+     for (int i = 0 ; i < D/2 ; i++){//0 to D-1
+        int temp = v[i] ;
+        v[i] = v[(D -1) - i] ;
+        v[(D-1) - i] = temp ;
+     }
+     for (int i = 0; i < (v.size()-D)/2 ; i++){// D to n-1 
+        int j = i + D; 
+        int temp = v[j] ;
+        v[j] = v[(v.size() - 1) - i] ;
+        v[(v.size()-1 ) - i ] = temp ;
+     }
+     for (int i = 0 ; i < v.size()/2 ; i++){ // 0 to n-1 
+        int temp = v[i] ;
+        v[i] = v[(v.size()-1) - i] ; 
+        v[(v.size()-1) - i] = temp ;
+     }
+ }
 
 int main (){
 
@@ -37,9 +62,13 @@ int main (){
     // for (auto it : v ){
     //     cout << it << endl ;
     // }
-    LeftRotateB_DPlaces(v ,3);
-    for (auto it : v ){
-        cout << it << endl ;
+    // LeftRotateB_DPlaces(v ,3);
+    // for (auto it : v ){
+    //     cout << it << endl ;
+    // }
+    LeftRotate_Array_By_D_Places_Optimal (v , 3);
+    for (auto it :v ){
+        cout << it << "  ";
     }
     return 0 ;
 }

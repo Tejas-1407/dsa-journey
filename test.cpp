@@ -141,7 +141,8 @@ void Left_Rotate_Array_By_One(vector <int> &v){
 }
 
 void Left_Rotate_Array_By_D(vector <int> &v, int D){
-    vector < int > temp ;
+    vector < int > temp (D); // important to size the vector first to D other wise error 
+    D = D % v.size() ;//this is one of those hidden mistakes ;
     for (int i = 0 ; i < D ;i++){
         temp[i] = v[i];
     }
@@ -157,5 +158,10 @@ void Left_Rotate_Array_By_D(vector <int> &v, int D){
 int main (){
 
     // 
+    vector <int> v = {1,2,3,4,5,6,7,8,9} ;
+    Left_Rotate_Array_By_D(v , 3) ;
+    for (auto it : v ){
+        cout << it << "  ";
+    }
     return 0 ;
 }
