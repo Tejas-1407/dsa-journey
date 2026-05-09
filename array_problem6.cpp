@@ -28,6 +28,7 @@ void LeftRotateB_DPlaces(vector <int> & v , int D){
     }
 }
 
+
 int main (){
 
     //
