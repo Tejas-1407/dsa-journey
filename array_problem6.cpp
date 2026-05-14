@@ -1,6 +1,7 @@
 //left rotate an array by one place 
 #include <iostream> 
 #include <vector>
+#include <algorithm>
 using namespace std ;
 
 void LeftRotateB_OnePlace(vector <int> & v ){
@@ -53,7 +54,24 @@ void LeftRotateB_DPlaces(vector <int> & v , int D){
         v[(v.size()-1) - i] = temp ;
      }
  }
+ void LeftRotate_Array_By_D_Places_SuperStraight(int arr[] , int n , int D ){
+    if (n == 0) return ;
+    D= D % n ;
+    reverse (arr , arr + D) ;
+    reverse (arr + D , arr + n);
+    reverse (arr , arr + n) ;
+ }
 
+// reverse fucntion is build in functions but its code is important 
+void Reverse (int arr [] , int n , int start , int end){
+    while (start <= end){
+        int temp = arr [start];
+        arr [ start ]= arr [end ];
+        arr [ start ] = temp ;
+        start ++ ;
+        end -- ;
+    }
+}
 int main (){
 
     //
@@ -66,9 +84,14 @@ int main (){
     // for (auto it : v ){
     //     cout << it << endl ;
     // }
-    LeftRotate_Array_By_D_Places_Optimal (v , 3);
-    for (auto it :v ){
-        cout << it << "  ";
+    // LeftRotate_Array_By_D_Places_Optimal (v , 3);
+    // for (auto it :v ){
+    //     cout << it << "  ";
+    // }
+    int arr [] ={ 1,2,3,4,5,6,7,8} ;
+    LeftRotate_Array_By_D_Places_SuperStraight (arr , sizeof (arr)/sizeof(int) , 3) ;
+    for (auto it :arr ) {
+        cout << it << "  " ;
     }
     return 0 ;
 }
