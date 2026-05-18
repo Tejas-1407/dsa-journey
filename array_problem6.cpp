@@ -14,6 +14,9 @@ void LeftRotateB_OnePlace(vector <int> & v ){
 //but for the algorithm the C is O(n) by array
  
 void LeftRotateB_DPlaces(vector <int> & v , int D){
+    if (v.size() == 0 ){
+         return ;
+    } 
     vector < int > temp(D);
     //important case if D > v.size() ->loop + D = D
     D = D % v.size() ;
@@ -25,14 +28,14 @@ void LeftRotateB_DPlaces(vector <int> & v , int D){
     for (int i = D ;i< v.size ();i++){
         v [i - D] = v[i];
     }
-    //O(n-d)
+    //O(n-d)    
     for (int i = v.size()-D ; i < v.size();i++ ){
         v[i] = temp[i - (v.size()-D)] ; 
     }
     //O(d)
     //SC = O(D) bcz of temporary array used 
 }
- void LeftRotate_Array_By_D_Places_Optimal(vector <int> &v , int D ){
+void LeftRotate_Array_By_D_Places_Optimal(vector <int> &v , int D ){
     if (v.size() == 0 ){
          return ;
     } 
@@ -56,7 +59,7 @@ void LeftRotateB_DPlaces(vector <int> & v , int D){
  }
  void LeftRotate_Array_By_D_Places_SuperStraight(int arr[] , int n , int D ){
     if (n == 0) return ;
-    D= D % n ;
+    D = D % n ;
     reverse (arr , arr + D) ;
     reverse (arr + D , arr + n);
     reverse (arr , arr + n) ;
