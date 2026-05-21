@@ -118,6 +118,24 @@ int Remove_Duplicate_First_try(vector <int> &v){
     return index ;
 }
 
+// no need of ptr 
+
+int Remove_Duplicate_Second_try(vector <int> &v){
+    // int *ptr = &v[0]; //no need 
+    int *stay = &v[0];
+    int index = 1;
+    for (int i = 1 ; i < v.size() ;i++){
+        if (*stay != v[i]){
+            stay ++;
+            *stay = v[i];
+            index ++;
+        }
+    }
+    v.resize(index);
+    return index ;
+}
+
+
 int Optimal_Remove_Duplicate (vector <int> &v) {
     int i = 0 ;
     for (int j = 1 ; j < v.size() ; j++){
@@ -158,10 +176,11 @@ void Left_Rotate_Array_By_D(vector <int> &v, int D){
 int main (){
 
     // 
-    vector <int> v = {1,2,3,4,5,6,7,8,9} ;
-    Left_Rotate_Array_By_D(v , 3) ;
-    for (auto it : v ){
-        cout << it << "  ";
-    }
+    vector <int> v = {1,2,2,3,3,4,4,5,5,} ;
+    // Left_Rotate_Array_By_D(v , 3) ;
+    // for (auto it : v ){
+    //     cout << it << "  ";
+    // }
+    cout << Remove_Duplicate_First_try(v) ;
     return 0 ;
 }
