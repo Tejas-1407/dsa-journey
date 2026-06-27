@@ -172,6 +172,24 @@ void Left_Rotate_Array_By_D(vector <int> &v, int D){
     }
 }
 
+int Linear_search(vector <int > &v , int target){
+    for (int i = 0 ; i< v.size () ; i++ ){
+        if (v[i]== target ){
+            return i ;
+        }
+        return -1 ;
+    }
+}
+
+void move_zeros_to_end_optimal(vector <int > &v){
+    int i = 0;
+    for (int j = 0 ; j <v.size() ; j++){
+        if (v[i]!=0){
+            swap(v[i] , v[j]);
+            i++; 
+        }
+    }
+}
 
 int main (){
 
