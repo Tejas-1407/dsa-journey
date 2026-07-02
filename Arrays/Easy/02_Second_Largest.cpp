@@ -1,17 +1,16 @@
-//2nd largest number
-
+// 2nd largest number
 
 #include <iostream>
 #include <vector>
 #include <climits>
-using namespace std ;
+using namespace std;
 
-
-// O(n)
-int largest (vector <int> &v ){
+// O(n) - Two Pass approach
+int largest(vector<int> &v) {
+    if (v.empty()) return -1;
     int maxi = v[0];
-    for (int i = 0 ; i < v.size() ;i++){
-        if (maxi < v[ i ]){
+    for (size_t i = 1; i < v.size(); i++) {
+        if (maxi < v[i]) {
             maxi = v[i];
         }
     }
@@ -27,8 +26,8 @@ int secondL(vector < int> &v){
         if (v[i] > SL && v[i] < maxi){
             SL = v[i];
         }
-    } 
-    return SL ;
+    }
+    return SL;
 }
 
 //SL optimal 
@@ -40,22 +39,23 @@ int OSL (vector <int > &v){
             if (maxi < v[i] ){
                 SL = maxi ;
                 maxi = v[i] ;
-            }
+        }
             else if (maxi > v[i] && SL < v [i]){
                 SL = v[i] ;
-            }
         }
-        cout << SL ; 
+    }
+    return SL;
 }
 
+int main() {
+    vector<int> v = {1, 1, 1, 1, 1, 1, 4, 5, 8, 6};
+    
+    cout << "Using secondL (Two-pass): " << secondL(v) << endl;
+    cout << "Using OSL (Single-pass): " << OSL(v) << endl;
 
-int main (){
-    //code
-    vector <int> v ={1,1,1,1,1,1,4,5,8,6};
-    cout << secondL (v) ;
-
-    return 0 ;
+    return 0;
 }
+
   
 
 
