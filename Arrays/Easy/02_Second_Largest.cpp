@@ -23,7 +23,7 @@ int secondL(vector < int> &v){
     int SL = INT_MIN ;
     int maxi = largest (v );
     for (int i=0 ; i < v.size();i++){
-        if (v[i] > SL && v[i] < maxi){
+        if (v[i] > SL && v[i] < maxi){// actually we want v[i]!= max but writing < is a good practice
             SL = v[i];
         }
     }
