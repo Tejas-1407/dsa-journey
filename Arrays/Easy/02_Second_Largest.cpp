@@ -33,7 +33,7 @@ int secondL(vector < int> &v){
 //SL optimal 
 
 
-int OSL (vector <int > &v){
+int OSL (vector <int > &v){//in this method we find the both max and SL together
     int maxi = v[0] , SL = INT_MIN; 
         for (int i=1  ;i < v.size() ; i++){
             if (maxi < v[i] ){

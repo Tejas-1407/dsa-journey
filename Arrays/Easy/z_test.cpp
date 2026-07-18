@@ -60,6 +60,7 @@ int second_smallest(vector <int > &v){
             SS = v[i];
         }
     }
+    return SS ;
 }
 
 int OSecond_smallest (vector <int > &v){
@@ -177,8 +178,8 @@ int Linear_search(vector <int > &v , int target){
         if (v[i]== target ){
             return i ;
         }
-        return -1 ;
     }
+    return -1 ;
 }
 
 void move_zeros_to_end_optimal(vector <int > &v){
