@@ -4,22 +4,22 @@
 #include <climits>
 using namespace std ;
 
-int ORD (vector <int > &v){
-    int i = 0 ; 
-    for (int j = 0 ; j < v.size() ;j++){
-        if (v[i] != v[j]){
-            i++ ;
-            v[i] = v[j] ;
+void CS (vector <int > &v){
+    for (int i = 0 ; i < v.size() -1 ;i++){
+        if (v[i] > v[i+1]){
+            cout << "not sorted " ;
+            return ;
         }
     }
-    v.resize(i+1);
-    return i+1 ;
+    cout << "sorted" ;
+    return ;
 }
 
 int main (){
 
-    vector <int > A = {1,2 ,2,3,3,3,4,5} ;
-    cout << ORD (A) <<endl ; 
+    vector <int > A = {1,2 ,2,3,3,3,4,6,5} ;
+    CS (A) ;
+    cout <<endl ; 
     for (auto it : A){
         cout << it << endl;
     }
