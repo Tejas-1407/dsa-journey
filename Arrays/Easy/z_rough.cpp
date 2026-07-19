@@ -4,27 +4,27 @@
 #include <climits>
 using namespace std ;
 
-int RD (vector<int > &v){
-    int *ptr = &v[0];
-    int *stay = &v[0];
-    int idx = 1 ;
-    for (int i = 1; i < v.size () ;i++){
-        if (v[i] != *ptr){
-            idx ++ ;
-            ptr = &v[i];
-            stay ++ ;
-            *stay = v[i] ;
+int SL (vector < int > & v) {
+    int l = v[0];
+    int sl = INT_MIN ;
+    for(int i =0 ; i < v.size() ;i++){ 
+        if (v[i]> l ){
+            sl = l ; 
+            l = v[i];
+        }
+        else if (v[i] < l && v[i] > sl){
+            sl = v[i] ;
         }
     }
-    v.resize (idx) ;
-    return idx ; 
+    cout << l << endl;
+    return sl ;
 }
 
 
 int main (){
 
     vector <int > A = {1,2 ,2,3,3,3,4,6,5} ;
-    cout << RD (A) ;
+    cout << SL (A) ;
     cout <<endl ; 
     for (auto it : A){
         cout << it << endl;
