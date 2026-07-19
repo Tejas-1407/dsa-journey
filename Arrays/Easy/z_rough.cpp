@@ -4,27 +4,19 @@
 #include <climits>
 using namespace std ;
 
-int SL (vector < int > & v) {
-    int l = v[0];
-    int sl = INT_MIN ;
-    for(int i =0 ; i < v.size() ;i++){ 
-        if (v[i]> l ){
-            sl = l ; 
-            l = v[i];
-        }
-        else if (v[i] < l && v[i] > sl){
-            sl = v[i] ;
-        }
+void LR (vector <int > & v){
+    for (int i = 0 ; i < v.size() -1 ;i++){
+        int temp = v[i] ;
+        v[i] =  v [i+1] ;
+        v[i+1 ] = temp  ;
     }
-    cout << l << endl;
-    return sl ;
 }
 
 
 int main (){
 
     vector <int > A = {1,2 ,2,3,3,3,4,6,5} ;
-    cout << SL (A) ;
+     LR (A) ;
     cout <<endl ; 
     for (auto it : A){
         cout << it << endl;
