@@ -4,19 +4,27 @@
 #include <climits>
 using namespace std ;
 
-bool CS (vector <int > &v){
-    for (int i = 0 ; i < v.size() -1 ;i++){
-        if (v[i] > v[i+1]){
-            return false;
+int RD (vector<int > &v){
+    int *ptr = &v[0];
+    int *stay = &v[0];
+    int idx = 1 ;
+    for (int i = 1; i < v.size () ;i++){
+        if (v[i] != *ptr){
+            idx ++ ;
+            ptr = &v[i];
+            stay ++ ;
+            *stay = v[i] ;
         }
     }
-    return true;
+    v.resize (idx) ;
+    return idx ; 
 }
+
 
 int main (){
 
     vector <int > A = {1,2 ,2,3,3,3,4,6,5} ;
-    cout << CS (A) ;
+    cout << RD (A) ;
     cout <<endl ; 
     for (auto it : A){
         cout << it << endl;
