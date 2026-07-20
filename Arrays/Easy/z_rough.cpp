@@ -12,6 +12,13 @@ void LR (vector <int > & v){
     }
 }
 
+void LRD (vector <int > &v, int D ){
+    int n = D% v.size() ;
+    for (int i = n -1  ; i < v.size ()-n ;i++ ){
+        v[i]
+    }
+}
+
 
 int main (){
 
