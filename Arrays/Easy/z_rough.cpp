@@ -5,19 +5,30 @@
 #include <algorithm>
 using namespace std ;
 
-void RR (vector <int > &v , int D) {
-    if (v.size()== 0 )return ;
-    D = D % v.size() ;
-    reverse (v.begin() + v.size()- D , v.end() ) ;
-    reverse (v.begin()  , v.begin() + v.size() -D ) ;
-    reverse (v.begin() , v.end() ) ;
+void RZ(vector < int >&v){
+    int j = -1 ; 
+    for (int i= 0 ; i < v.size(); i++){
+        if (v[i ] == 0 ){
+            j = i ;
+            break ;
+        }
+    }
+    if (j == -1 ) return ;
+    for (int i = j + 1 ; i < v.size() ;i++){
+        if (v[i] != 0 ){
+            swap(v[i] , v[j]) ;
+            j++ ;
+        }
+    }
 }
+
 int main (){
 
-    vector <int > v  = { 1,2,3,3,4,4,5,5,6,7,7,7};
-    RR(v , 3) ;
-    for (auto it : v){
-        cout << it << endl ;
-    }
+   //code
+   vector <int> v = {1,2,0,4,0,3,0,6,0,6,7} ; 
+   RZ (v) ;
+   for (auto it : v){   
+    cout << it << endl ;
+   }
     return  0 ;
 }

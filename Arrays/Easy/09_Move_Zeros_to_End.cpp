@@ -38,6 +38,7 @@ void Move_Zeros_To_End(vector <int> &v){
         v[i] = 0;
     }
 }
+//this is the complete optimal solution 
 void Move_Zeros_To_End_optimal_0(vector <int > &v) {
     int j = -1 ;
     for (int i = 0 ; i < v.size() ; i++){
@@ -57,7 +58,7 @@ void Move_Zeros_To_End_optimal_0(vector <int > &v) {
     }
 }
 
-void Move_Zeros_To_End_optimal_1 (vector <int > &v){
+void Move_Zeros_To_End_optimal_1 (vector <int > &v){// only if its known v[0] = 0
     int j= 0 ;
     for (int i= 0  ;i <v.size(); i++){
         if (v[i] != 0){
