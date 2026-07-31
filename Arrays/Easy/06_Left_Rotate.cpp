@@ -58,12 +58,23 @@ void LeftRotate_Array_By_D_Places_Optimal(vector <int> &v , int D ){
      }
  }
  void LeftRotate_Array_By_D_Places_SuperStraight(int arr[] , int n , int D ){
+    //note :size calcalulation for array n= sizeof(arr)/sizeof (arr[0])
+    //note : always pass n with array its a syntax
     if (n == 0) return ;
     D = D % n ;
     reverse (arr , arr + D) ;
     reverse (arr + D , arr + n);
     reverse (arr , arr + n) ;
  }
+ // using vector 
+void OLR (vector <int > & v , int D){
+    if (v.size() == 0 ) return ;
+    D = D % v.size() ;
+    reverse (v.begin() ,v.begin () + D) ;
+    reverse (v.begin() + D,v.end()) ;
+    reverse (v.begin() ,v.end ()) ;
+}
+
 
 // reverse fucntion is build in functions but its code is important 
 void Reverse (int arr [] , int n , int start , int end){
