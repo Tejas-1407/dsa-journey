@@ -182,12 +182,19 @@ int Linear_search(vector <int > &v , int target){
     return -1 ;
 }
 
-void move_zeros_to_end_optimal(vector <int > &v){
-    int i = 0;
-    for (int j = 0 ; j <v.size() ; j++){
-        if (v[i]!=0){
-            swap(v[i] , v[j]);
-            i++; 
+void move_zeros_to_end_optimalvoid (vector < int >&v){
+    int j = -1 ; 
+    for (int i= 0 ; i < v.size(); i++){
+        if (v[i ] == 0 ){
+            j = i ;
+            break ;
+        }
+    }
+    if (j == -1 ) return ;
+    for (int i = j + 1 ; i < v.size() ;i++){
+        if (v[i] != 0 ){
+            swap(v[i] , v[j]) ;
+            j++ ;
         }
     }
 }
