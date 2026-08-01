@@ -2,6 +2,7 @@
 #include <vector>
 #include <set>
 #include <climits>
+#include <algorithm>
 
 using namespace std ;
 
@@ -171,6 +172,14 @@ void Left_Rotate_Array_By_D(vector <int> &v, int D){
     for (int i = v.size() - D ; i < v.size() ;i++){
         v [i] = temp [i - (v.size() - D)] ;
     }
+}
+
+
+void ORL (vector <int> &v , int D ) {
+    D = D % v.size() ;
+    reverse (v.begin() , v.begin() +D ) ;
+    reverse (v.begin()+D , v.end()) ;
+    reverse (v.begin()  , v.end()) ;
 }
 
 int Linear_search(vector <int > &v , int target){
