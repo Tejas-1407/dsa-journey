@@ -12,7 +12,7 @@
 
 using namespace std ;
 
-int RemoveDupli(vector < int > &v){ // &v means the vector we passed we just name it alias v so changes made in this vecto will refels in original
+int RemoveDupli(vector < int > &v){ // &v means the vector we passed we just name it alias v so changes made in this vecto will reflect in original
     set <int > st ;
     for (int i= 0 ;i< v.size(); i++){
         st.insert(v[i]); 
@@ -20,7 +20,7 @@ int RemoveDupli(vector < int > &v){ // &v means the vector we passed we just nam
     
     int idx  = 0 ;
     for (auto it : st){
-        v[idx] = it ;
+        v[idx] = it ;  //v.push_back(it) ; NOOOOO
         idx ++ ;
     }//O(n)
     v.resize(idx);//important to remove garbage 
