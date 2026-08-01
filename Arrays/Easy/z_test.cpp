@@ -200,7 +200,7 @@ void move_zeros_to_end_optimalvoid (vector < int >&v){
 }
 
 
-vector <int> fun2 (vector < int > &v) {//different approach remove zeros direct return vector type function
+vector <int> remove_zeros_to_ened_lite(vector < int > &v) {//different approach remove zeros direct return vector type function
     vector <int> temp ;
     for (int i = 0  ; i < v.size() ; i++){
         if (v[i]!=0){
@@ -210,7 +210,7 @@ vector <int> fun2 (vector < int > &v) {//different approach remove zeros direct 
     return temp  ;
 }
 
-void fun3(vector <int> &v){ // brute force move zeros to end
+void remove_zeros_to_end_brute(vector <int> &v){ // brute force move zeros to end
     vector <int> temp ;
     for (int i = 0 ; i < v.size() ;i++){
         if (v[i]!=0){
@@ -225,7 +225,7 @@ void fun3(vector <int> &v){ // brute force move zeros to end
     }
 }
 
-void fun4 (vector <int > &v) {
+void bubble_sort (vector <int > &v) {
     //bubble sort 
     bool swapped ;
     for (int i = 0; i < v.size() - 1 ;i++){
@@ -240,7 +240,7 @@ void fun4 (vector <int > &v) {
     }   
 }
 
-void fun5(vector <int > &v) { // [sorted | unsorted]
+void selection_sort(vector <int > &v) { // [sorted | unsorted]
     //selection sort ;
     for (int i = 0 ; i < v.size()-1 ;i++){
         //concept 
@@ -254,7 +254,7 @@ void fun5(vector <int > &v) { // [sorted | unsorted]
     }
 }
 
-void fun6(vector < int > & v){
+void insertion_sort(vector < int > & v){
     //insertion sort , card method , current & previous concept 
     for (int i = 1 ; i < v.size ()  ; i++){
         int curr = v[i] ;  //curr 
