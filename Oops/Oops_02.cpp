@@ -1,3 +1,27 @@
+// ✅ Classes
+
+// ✅ Objects
+
+// ✅ Data Members
+
+// ✅ Member Functions
+
+// ✅ Constructors
+
+// ✅ Default Constructor
+
+// ✅ Parameterized Constructor
+
+// ✅ Constructor Overloading
+
+// ✅ this Pointer
+
+// ✅ Public / Private
+
+// ✅ Encapsulation
+
+// That's roughly 75–80% of the OOP needed before diving deep into DSA.
+
 #include <iostream>
 #include <string>
 using namespace std ;
