@@ -27,7 +27,7 @@ void selection_sort (vector <int > &v){
             }
         }
         swap (v[i] ,  v[smallest]) ;
-    }
+    } 
 }
 
 
