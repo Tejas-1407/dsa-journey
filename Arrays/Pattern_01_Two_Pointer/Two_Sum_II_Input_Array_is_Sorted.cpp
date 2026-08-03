@@ -33,3 +33,9 @@ int main () {
 
     return 0 ;
 }
+
+
+// Mistakes:
+// - Wrong while condition (>= instead of <)
+// - Forgot return {}
+// - Extra brace on LeetCode
