@@ -68,6 +68,20 @@ void Move_Zeros_To_End_optimal_1 (vector <int > &v){// only if its known v[0] = 
     }
 }
 
+
+    void moveZeroes(vector<int>& nums) {
+        int k = 0 ; 
+        for (int i = 0 ; i < nums.size() ;i++){
+            if (nums[i] != 0){
+                if (i != k ){
+                    swap (nums[i] , nums[k]);
+                }
+                k ++ ;
+            }
+        }
+    }
+
+
 int main (){
 
     //
